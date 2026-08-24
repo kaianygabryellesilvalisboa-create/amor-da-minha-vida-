@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Para o meu amor ❤️🦖</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background:
+        linear-gradient(
+          135deg,
+          #ff3b3b,
+          #ff8a3d,
+          #3da9ff,
+          #50d878
+        );
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      overflow-x: hidden;
+      color: white;
+    }
+
+    /* TELA DE ENTRADA */
+
+    #entrada {
+      position: fixed;
+      inset: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+      padding: 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff3b3b,
+          #ff8a3d,
+          #3da9ff,
+          #50d878
+        );
+
+      z-index: 999;
+    }
+
+    #entrada h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+    }
+
+    #entrada p {
+      font-size: 19px;
+      margin-bottom: 25px;
+    }
+
+    .botao-entrada {
+      border: none;
+      padding: 16px 30px;
+
+      border-radius: 40px;
+
+      background: white;
+      color: #ff3b3b;
+
+      font-size: 18px;
+      font-weight: bold;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 25px rgba(0,0,0,0.3);
+
+      transition: 0.3s;
+    }
+
+    .botao-entrada:hover {
+      transform: scale(1.08);
+    }
+
+    /* SITE PRINCIPAL */
+
+    .container {
+      width: 90%;
+      max-width: 650px;
+
+      padding: 35px;
+
+      text-align: center;
+
+      background: rgba(0,0,0,0.35);
+
+      border-radius: 30px;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+        0 10px 40px rgba(0,0,0,0.3);
+
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .godzilla {
+      font-size: 80px;
+
+      animation:
+        pulinho 1.5s infinite alternate;
+    }
+
+    @keyframes pulinho {
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(-10px);
+      }
+    }
+
+    h2 {
+      font-size: 36px;
+      margin: 10px 0 25px;
+
+      text-shadow:
+        3px 3px 8px rgba(0,0,0,0.4);
+    }
+
+    .carta {
+      background: rgba(255,255,255,0.15);
+
+      padding: 25px;
+
+      border-radius: 20px;
+
+      line-height: 1.7;
+
+      font-size: 17px;
+
+      text-align: left;
+    }
+
+    .assinatura {
+      text-align: center;
+      font-weight: bold;
+      font-size: 19px;
+    }
+
+    /* BOTÃO */
+
+    .botao {
+      margin-top: 25px;
+
+      padding: 14px 25px;
+
+      border: none;
+
+      border-radius: 30px;
+
+      background: #ff3b3b;
+
+      color: white;
+
+      font-size: 17px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 5px 15px rgba(0,0,0,0.3);
+
+      transition: 0.3s;
+    }
+
+    .botao:hover {
+      transform: scale(1.08);
+      background: #ff2020;
+    }
+
+    #mensagem {
+      display: none;
+
+      margin-top: 20px;
+
+      font-size: 20px;
+
+      font-weight: bold;
+
+      animation:
+        aparecer 0.8s ease;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* CORAÇÕES */
+
+    .coracao {
+      position: fixed;
+
+      bottom: -50px;
+
+      font-size: 25px;
+
+      pointer-events: none;
+
+      animation:
+        subir 7s linear forwards;
+
+      z-index: 1;
+    }
+
+    @keyframes subir {
+      0% {
+        transform:
+          translateY(0)
+          rotate(0deg);
+
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      100% {
+        transform:
+          translateY(-110vh)
+          rotate(360deg);
+
+        opacity: 0;
+      }
+    }
+
+    /* CORAÇÃO DO TÍTULO */
+
+    .mini-coracoes {
+      font-size: 24px;
+      margin-top: 5px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TELA QUE APARECE QUANDO ABRIR O SITE -->
+
+  <div id="entrada">
+
+    <div style="font-size: 75px;">
+      🦖❤️
+    </div>
+
+    <h1>
+      Uma surpresa para você 💌
+    </h1>
+
+    <p>
+      Fiz isso com todo o meu amor. ❤️
+    </p>
+
+    <button
+      class="botao-entrada"
+      onclick="entrarNoSite()"
+    >
+      💕 Clique para entrar 💕
+    </button>
+
+  </div>
+
+
+  <!-- MÚSICA -->
+
+  <audio
+    id="musica"
+    loop
+  >
+    <source
+      src="stand-by-me.mp3"
+      type="audio/mpeg"
+    >
+  </audio>
+
+
+  <!-- SITE PRINCIPAL -->
+
+  <div class="container">
+
+    <div class="godzilla">
+      🦖❤️
+    </div>
+
+    <h2>
+      Meu amor ❤️
+    </h2>
+
+    <div class="mini-coracoes">
+      ❤️ 🧡 💙 💚 ❤️
+    </div>
+
+
+    <div class="carta">
+
+      Meu amor, hoje é o nosso dia,
+      o nosso dia 24. ❤️
+
+      <br><br>
+
+      Sei que estamos longe um do outro agora,
+      mas prometo que quando eu te ver
+      eu irei te encher de beijos.
+
+      <br><br>
+
+      Eu te amo mais que qualquer Godzilla
+      no mundo e mais que açaí. 🦖❤️
+
+      <br><br>
+
+      Você me cura de qualquer coisa.
+      Obrigado por existir e ser esse garoto
+      incrível que você é.
+
+      <br><br>
+
+      Eu prometo sempre cuidar de você
+      e te amar muito, muito, muito.
+
+      <br><br>
+
+      Eu fico feliz que você tenha gostado
+      do meu bolinho e da surpresa.
+
+      <br><br>
+
+      Eu faço de tudo pra te deixar alegre
+      e feliz de volta, porque eu não gosto
+      de te ver triste. 💕💕💕
+
+      <br><br>
+
+      Eu prometo que vou fazer
+      muitooooo mais bolinho,
+      docinhos e surpresas. 🧁🍰💕
+
+      <br><br>
+
+      Tenha uma ótima noite
+      e durma bem, meu neném. ❤️
+
+      <br><br>
+
+      <div class="assinatura">
+        Com amor, sua amada. 💕
+      </div>
+
+    </div>
+
+
+    <button
+      class="botao"
+      onclick="mostrarMensagem()"
+    >
+      💌 Clique aqui, meu amor
+    </button>
+
+
+    <div id="mensagem">
+
+      EU TE AMO MAIS QUE O GODZILLA
+      AMA DESTRUIR CIDADES 😭❤️🦖
+
+      <br><br>
+
+      ❤️ 🧡 💙 💚 ❤️
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* ENTRAR NO SITE E COMEÇAR A MÚSICA */
+
+    function entrarNoSite() {
+
+      const entrada =
+        document.getElementById("entrada");
+
+      const musica =
+        document.getElementById("musica");
+
+      entrada.style.display = "none";
+
+      musica.play().catch(function() {
+        console.log(
+          "O navegador não conseguiu iniciar a música."
+        );
+      });
+
+      criarCoracoes();
+
+    }
+
+
+    /* BOTÃO DA CARTA */
+
+    function mostrarMensagem() {
+
+      document.getElementById(
+        "mensagem"
+      ).style.display = "block";
+
+      criarCoracoes();
+
+    }
+
+
+    /* CRIAR CORAÇÕES FLUTUANDO */
+
+    function criarCoracoes() {
+
+      const coracoes = [
+        "❤️",
+        "🧡",
+        "💙",
+        "💚",
+        "💕",
+        "💗"
+      ];
+
+
+      for (
+        let i = 0;
+        i < 25;
+        i++
+      ) {
+
+        const coracao =
+          document.createElement("div");
+
+        coracao.className =
+          "coracao";
+
+        coracao.innerHTML =
+          coracoes[
+            Math.floor(
+              Math.random() *
+              coracoes.length
+            )
+          ];
+
+        coracao.style.left =
+          Math.random() * 100 + "vw";
+
+        coracao.style.animationDuration =
+          (4 + Math.random() * 5) + "s";
+
+        coracao.style.animationDelay =
+          Math.random() * 2 + "s";
+
+        document.body.appendChild(
+          coracao
+        );
+
+
+        setTimeout(function() {
+
+          coracao.remove();
+
+        }, 10000);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
